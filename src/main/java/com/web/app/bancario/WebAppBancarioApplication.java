@@ -21,7 +21,7 @@ public class WebAppBancarioApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(WebAppBancarioApplication.class, args);
 	}
-	
+
 	@Autowired
 	PasswordEncoder passwordEncoder;
 	
