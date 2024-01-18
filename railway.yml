@@ -1,14 +1,15 @@
-plugins:
+services:
   - image: 'railway/java'
+    env:
+      - key: SRING_DATASOURCE_URL
+        value: 'jdbc:mysql://host.docker.internal:3306/banco'
+      - key: SRING_DATASOURCE_USERNAME
+        value: 'root'
+      - key: SRING_DATASOURCE_PASSWORD
+        value: 'ermne12345'
 
 build:
   - ./mvnw clean package -DskipTests
 
 run:
-  - java -jar -DSRING_DATASOURCE_URL=jdbc:mysql://localhost:3306/banco
-                -DSRING_DATASOURCE_USERNAME=root
-                -DSRING_DATASOURCE_PASSWORD=ermne12345
-                -Dlogging.level.org.hibernate.SQL=debug
-                -Dlogging.level.org.springframework.web.socket=DEBUG
-                -Djwt.secret.key=dab4210be98483c6dbec7ab65d1c09a01f71179a88cf11848f314ed5b33a76b9ab
-                -Djwt.time.expiration=86400000 target/web-app-bancario-0.0.1-SNAPSHOT.jar
+  - java -jar target/web-app-bancario-0.0.1-SNAPSHOT.jar
