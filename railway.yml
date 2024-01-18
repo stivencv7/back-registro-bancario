@@ -5,4 +5,4 @@ build:
   - ./mvnw clean package -DskipTests
 
 run:
-  - java -jar -DSRING_DATASOURCE_URL=jdbc:mysql://host.docker.internal:3306/banco -DSRING_DATASOURCE_USERNAME=<ermen> -DSRING_DATASOURCE_PASSWORD=<ermne12345> target/target/web-app-bancario-0.0.1-SNAPSHOT.jar
+  - java -jar -DSRING_DATASOURCE_URL=jdbc:mysql://host.docker.internal:3306/banco -DSRING_DATASOURCE_USERNAME=<root> -DSRING_DATASOURCE_PASSWORD=<ermne12345> target/web-app-bancario-0.0.1-SNAPSHOT.jar
