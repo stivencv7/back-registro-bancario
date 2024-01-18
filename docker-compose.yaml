@@ -1,0 +1,37 @@
+version: "3.9"
+services:
+  mysql8:
+    container_name: mysql8
+    image: mysql
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ermen12345
+      MYSQL_DATABASE: banco
+    volumes:
+      - data-mysql:/var/lib/mysql
+    restart: always
+    networks:
+      - spring
+  
+  banco:
+    container_name: banco
+    build:
+      context: ./
+      dockerfile: /Dockerfile
+    ports:
+      - "8080:8080"
+    env_file: ./.env
+    networks:
+      - spring
+    depends_on:
+      - mysql8
+    restart: always
+
+
+volumes:
+  data-mysql:
+    name: data-maysql
+
+networks:
+  spring:
