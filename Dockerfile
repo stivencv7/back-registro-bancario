@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17.0.2_8-jdk
+FROM openjdk:17-jdk-alpine as builder
 
 WORKDIR /app
 
@@ -13,7 +13,13 @@ COPY ./src ./src
 
 RUN ./mvnw clean package -DskipTests
 
+FROM openjdk:17-jdk-alpine
+
+WORKDIR /app
+
+COPY --from=builder /app/target/web-app-bancario-0.0.1-SNAPSHOT.jar .
+
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "./target/web-app-bancario-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "web-app-bancario-0.0.1-SNAPSHOT.jar"]
 
