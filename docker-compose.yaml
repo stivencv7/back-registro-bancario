@@ -16,9 +16,10 @@ services:
   
   banco:
     container_name: banco
-    build:
-      context: ./
-      dockerfile: /Dockerfile
+    image: stivencv7/registro_bancario
+#    build:
+#      context: ./
+#      dockerfile: /Dockerfile
     ports:
       - "8080:8080"
     env_file: ./.env
