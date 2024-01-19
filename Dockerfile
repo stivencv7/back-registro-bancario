@@ -25,5 +25,6 @@ ARG PORT_APP=8080
 ENV PORT ${PORT_APP}
 EXPOSE $PORT
 
-CMD ["java", "-jar", "web-app-bancario-0.0.1-SNAPSHOT.jar"]
+CMD sleep 20 && java -jar web-app-bancario-0.0.1-SNAPSHOT.jar
+#CMD ["java", "-jar", "web-app-bancario-0.0.1-SNAPSHOT.jar"]
 
