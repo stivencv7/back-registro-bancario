@@ -17,7 +17,7 @@ public class CorsConfig {
 			
 			
 			registry.addMapping("/api/login")
-					.allowedOrigins("https://thriving-entremet-b01d40.netlify.app\", \"http://localhost:3000")
+					.allowedOrigins("https://thriving-entremet-b01d40.netlify.app","http://localhost:3000")
 					.allowedMethods("*")
 					.exposedHeaders("*");
 		}
