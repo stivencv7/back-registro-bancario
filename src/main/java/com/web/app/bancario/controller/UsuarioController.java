@@ -1,12 +1,12 @@
 package com.web.app.bancario.controller;
 
-import java.io.IOException;
+
 //import java.util.Collection;
 import java.util.HashMap;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.User;
+
 
 import java.util.HashSet;
 import java.util.List;
@@ -20,7 +20,6 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -35,7 +34,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+
 import com.web.app.bancario.dto.UsuarioDTO;
 import com.web.app.bancario.entity.ERole;
 import com.web.app.bancario.entity.Historial;
@@ -45,13 +44,10 @@ import com.web.app.bancario.security.jwt.JwtUtils;
 import com.web.app.bancario.service.IServiceHistoria;
 import com.web.app.bancario.service.IServiceUsuario;
 
-import jakarta.servlet.FilterChain;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api")
 public class UsuarioController {

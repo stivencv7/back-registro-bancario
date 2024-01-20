@@ -17,7 +17,7 @@ import com.web.app.bancario.entity.Usuario;
 import com.web.app.bancario.service.IServiceUsuario;
 
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @Controller
 public class AlertVentaSocketController {
 	
