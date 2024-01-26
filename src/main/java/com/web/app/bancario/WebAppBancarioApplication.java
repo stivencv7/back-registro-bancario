@@ -47,7 +47,7 @@ public class WebAppBancarioApplication {
 					.email("user@gmail.com")
 					.username("user")
 					.apellido("apellidoUser")
-					.telefono("32021345688")
+					.telefono("3202134568")
 					.saldo(50000)
 					.password(passwordEncoder.encode("usuario"))
 					.roles(Set.of(Role.builder()

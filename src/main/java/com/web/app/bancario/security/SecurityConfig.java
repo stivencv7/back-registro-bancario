@@ -52,7 +52,7 @@ public class SecurityConfig {
 			})
 			.authorizeHttpRequests(authorize->{
 		
-				authorize.requestMatchers("api/findAll/pageable","/ws/**","/topic/message","/alert","/topic","/app/alert").permitAll();
+				authorize.requestMatchers("api/findAll/pageable","/ws/**","/topic/message","/alert","/topic","/app/alert","api/add").permitAll();
 				//authorize.requestMatchers("/productos/{nombre}").hasRole("ADMIN");//para manejar los roles
 				//authorize.requestMatchers("/productos/{nombre}").hasanyRole("ADMIN");
 				authorize.anyRequest().authenticated();

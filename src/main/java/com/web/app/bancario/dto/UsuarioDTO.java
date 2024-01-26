@@ -1,5 +1,6 @@
 package com.web.app.bancario.dto;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import com.web.app.bancario.entity.Role;
@@ -14,8 +15,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class UsuarioDTO {
+public class UsuarioDTO implements Serializable {
 
+	private static final long serialVersionUID = 1L;
 	private Long id;
 	private String username;
 	private String apellido;

@@ -192,13 +192,10 @@ public class UsuarioController {
 //	}
 	
 	@PostMapping("/add")
-	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> registrarUsuario(@RequestBody UsuarioDTO usuario){
-	/*Set<Role>roles=usuario.getRoles().stream()
-				.map(role->Role.builder().name(ERole.valueOf(role))
-						.build()
-						).collect(Collectors.toSet());*/
-	
+		
+		System.err.println("usuario+ "+ usuario);
+		
 		Usuario newUsuario=Usuario.builder()
 				.username(usuario.getUsername())
 				.apellido(usuario.getApellido())
